@@ -1,0 +1,79 @@
+.login{
+    margin: 100px auto;
+    
+}
+
+.login h1{
+    text-align: center;
+    color: rgb(19, 34, 243);
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.login .links{
+    display: flex;
+    padding: 0 15px;
+}
+
+.login .links a{
+    color: #adb2ba;
+    text-decoration: none;
+    display: inline-flex;
+    padding: 0 10px 10px 10px;
+    font-weight: bold;
+}
+
+.login .links a:hover{
+    border-bottom: 3px solid rgb(36, 15, 224);
+    color: rgb(16, 30, 224);
+}
+
+.login form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.login form label{
+    margin-left: 15%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 30px;
+    background-color: rgb(42, 8, 233);
+    color: #ffffff;
+}
+
+.login form input[type="password"],
+.login form input[type="text"],
+.login form input[type="email"]{
+    margin-left: 70px;
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.login form button{
+    width: 150px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 35%;
+    transition: background-color 0.2s;
+
+}
+.login form button:hover{
+    background-color: brown;
+    transition: background-color 0.2s;
+}
