@@ -11,9 +11,9 @@ app.secret_key = 'key'
 
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'pluna'
+app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'Portal'
+app.config['MYSQL_DB'] = 'portal'
 
 
 mysql = MySQL(app)
@@ -25,11 +25,11 @@ def index():
 
 
 
-# @app.route('/shop', methods=['GET', 'POST'])
-# def shop():
-#     if request.method == 'POST':
-#         return redirect(url_for('shop'))
-#     return render_template('shop.html')@app.route('/log', methods=['GET', 'POST'])
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    if request.method == 'POST':
+        return redirect(url_for('about'))
+    return render_template('about.html')
 
 
 
@@ -47,7 +47,7 @@ def login():
             session['Id'] = account['id']
             session['Username'] = account['Username']
             msg = 'Logged in successfully !'
-            return render_template('main.html', msg = 'Username')
+            return render_template('contact.html', msg = 'Username')
         else:
             msg = 'Incorrect username / password !'
     return render_template('login.html', msg = msg)
