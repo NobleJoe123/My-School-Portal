@@ -438,7 +438,7 @@
 
 
 
-
+.enrol,
 .login,
 .register {
     width: 480px;
@@ -476,14 +476,14 @@
     border-bottom: 3px solid rgb(177, 238, 65);
     color: rgb(177, 238, 65);
 } */
-
+.enrol form,
 .login form .register form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 20px;
 }
-
+.enrol form label,
 .login form label,
 .register form label {
     margin-left: 15%;
