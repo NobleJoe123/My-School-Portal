@@ -438,30 +438,32 @@
 
 
 
-.login{
-    width: 480px;
-    align-items: center;
-    margin: 50px auto;
-    
 
+.login,
+.register {
+    width: 480px;
+    background-color: #ffffff;
+    margin: 50px auto;
     
 }
 
-.login h1{
+.login h1,
+.register h1 {
     text-align: center;
-    margin-left: 20px;
-    color:#0dcaf0;
-    font-size: 40px;
+    color: #0dcaf0;
+    font-size: 35px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
 }
-
-/* .login .links{
+/*
+.login .links,
+.register .links {
     display: flex;
     padding: 0 15px;
 }
 
-.login .links a{
+.login .links a,
+.register .links a {
     color: #adb2ba;
     text-decoration: none;
     display: inline-flex;
@@ -469,55 +471,70 @@
     font-weight: bold;
 }
 
-.login .links a:hover{
-    border-bottom: 3px solid rgb(36, 15, 224);
-    color: rgb(16, 30, 224); */
+.login .links a:hover,
+.register .links a:hover {
+    border-bottom: 3px solid rgb(177, 238, 65);
+    color: rgb(177, 238, 65);
+} */
 
-
-.login form{
+.login form .register form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 20px;
 }
 
-.login form label{
-    margin-left: 8%;
+.login form label,
+.register form label {
+    margin-left: 15%;
     margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 80px;
     height: 30px;
-    background-color: #0dcaf0;
+    background-color:#0dcaf0;
     color: #ffffff;
 }
 
 .login form input[type="password"],
 .login form input[type="text"],
-.login form input[type="email"]{
-    margin-left: 55px;
-    width: 310px;
-    height: 50px;
+.login form input[type="email"],
+.register form input[type="password"],
+.register form input[type="text"],
+.register form input[type="email"] {
+    margin-left: 70px;
+    width: 350px;
+    height: 60px;
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
     padding: 0 15px;
 }
+.register form button,
 .login form button{
-    width: 100px;
+    width: 150px;
     height: 40px;
     background-color: #0dcaf0;
     color: white;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     border: 0;
     cursor: pointer;
     font-weight: bold;
     font-size: larger;
-    margin-left: -35%;
+    margin-left: 35%;
     transition: background-color 0.2s;
 
 }
+.login .msg,
+.register .msg{
+    align-items: center;
+    color: #0dcaf0;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+}
+.register form button :hover,
 .login form button:hover{
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     transition: background-color 0.2s;
