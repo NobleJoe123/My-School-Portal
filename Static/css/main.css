@@ -496,7 +496,9 @@
     background-color:#0dcaf0;
     color: #ffffff;
 }
-
+.enrol form input[type="password"],
+.enrol form input[type="text"],
+.enrol form input[type="email"],
 .login form input[type="password"],
 .login form input[type="text"],
 .login form input[type="email"],
@@ -510,6 +512,7 @@
     margin-bottom: 20px;
     padding: 0 15px;
 }
+.enrol form button
 .register form button,
 .login form button{
     width: 150px;
@@ -526,6 +529,7 @@
     transition: background-color 0.2s;
 
 }
+.enrol .msg,
 .login .msg,
 .register .msg{
     align-items: center;
@@ -535,6 +539,7 @@
     font-style: oblique;
 }
 .register form button :hover,
+.enrol form button :hover,
 .login form button:hover{
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     transition: background-color 0.2s;
