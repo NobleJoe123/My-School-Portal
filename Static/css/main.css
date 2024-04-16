@@ -446,7 +446,7 @@
     margin: 50px auto;
     
 }
-.enrol,
+.enrol h1,
 .login h1,
 .register h1 {
     text-align: center;
@@ -476,8 +476,8 @@
     border-bottom: 3px solid rgb(177, 238, 65);
     color: rgb(177, 238, 65);
 } */
-.enrol form,
-.login form .register form {
+
+.enrol form .login form .register form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -512,7 +512,7 @@
     margin-bottom: 20px;
     padding: 0 15px;
 }
-.enrol form button
+.enrol form button,
 .register form button,
 .login form button{
     width: 150px;
