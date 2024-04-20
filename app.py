@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request, url_for, session
-from datetime import datetime
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
+import re
 
 
 
@@ -41,21 +41,23 @@ def page_not_found(e):
     return render_template('404.html')
      
  
-@app.route('/reg', methods=['GET', 'POST'])
-def reg():
+@app.route('/register/admin', methods=['GET', 'POST'])
+def admin_register():
     msg = ''
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form and 'address' in request.form and 'school' in request.form:
         username = request.form['username']
         password = request.form['password']
         email = request.form['email']
+        address = request.form['address']
+        school = request.form['school']
         cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO reg VALUES (NULL, %s, %s, %s)', (username, password, email,))
+        cursor.execute('INSERT INTO reg VALUES (NULL, %s, %s, %s, %s, %s)', (username, password, email, address, school))
         mysql.connection.commit()
         msg = 'You have successfully registered!'
         return render_template('login.html', msg=msg)
     elif request.method == 'POST':
         msg = 'Please fill out the form!'
-    return render_template('register.html', msg=msg)
+    return render_template('admin_register.html', msg=msg)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -79,23 +81,23 @@ def login():
 
 
 
-@app.route('/enrol', methods=['GET', 'POST'])
-def enrol():
+@app.route('/register/user', methods=['GET', 'POST'])
+def user_register():
     msg = ''
-    if request.method == 'POST' and 'studentname' in request.form and 'parentmobile' in request.form and 'formerclass' in request.form and 'address' in request.form:
-        studentname = request.form['studentname']
-        parentmobile = request.form['parentmobile']
-        formerclass = request.form['formerclass']
+    if request.method == 'POST' and 'student' in request.form and 'parent' in request.form and 'former' in request.form and 'address' in request.form:
+        student = request.form['student']
+        parent = request.form['parent']
+        former = request.form['former']
         address = request.form['address']
         cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO enrol VALUES (NULL, %s, %s, %s, %s)', (studentname, parentmobile,formerclass,address))
+        cursor.execute('INSERT INTO reg VALUES (NULL, %s, %s, %s, %s)', (student, parent, former, address))
         mysql.connection.commit()
-        msg = 'You are successfully a student!'
+        msg = 'You have successfully registered!'
         return render_template('login.html', msg=msg)
     elif request.method == 'POST':
         msg = 'Please fill out the form!'
-    return render_template('enrol.html', msg=msg)
-
+    return render_template('user_register.html', msg=msg)
 
 if __name__ == '__main__':
+    
     app.run(debug=True)

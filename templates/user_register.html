@@ -44,22 +44,25 @@
 
 
     <!-- Register Start -->
-    <div class="register">
-        <h1>Register</h1>
-        <form action="{{ url_for('reg') }}" method="post" autocomplete="off">
-            <label for="Username">
+    <div class="enrol">
+        <h1>Enrol</h1>
+        <form action="{{ url_for('enrol') }}" method="post" autocomplete="off">
+            <label for="student">
                 <i class="fa fa-user"></i>
             </label>
-            <input type="text" name="username" placeholder="Username" id="username" required>
-            <label for="Password">
-                <i class="fa fa-lock"></i>
+            <input type="text" name="Student name" placeholder="Student name" id="student" required>
+            <label for="parent">
+                <i class="fa fa-phone-alt"></i>
             </label>
-            <input type="password" name="password" placeholder="Password" id="password" required>
-            <label for="Email">
-                <i class="fa fa-envelope-open"></i>
+            <input type="text" name="Parent mobile" placeholder="Parent mobile" id="parent" required>
+            <label for="former">
+                <i class="fa fa-graduation-cap"></i>
             </label>
-            <input type="email" name="email" placeholder="Email" id="email" required>
-            <p style="text-align: center;">Already have an account?<a href="{{ url_for('login') }}"> Login</a></p>
+            <input type="text" name="Former class atten...." placeholder="Former class atten...." id="former" required>
+            <label for="address">
+                <i class="fa fa-globe"></i>
+            </label>
+            <input type="text" name="Address" placeholder="Address" id="address" required>
             <div class="msg">{{ msg }}</div>
             <button type="submit" id="demo">Submit</button>
         </form>

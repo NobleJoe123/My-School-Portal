@@ -44,25 +44,30 @@
 
 
     <!-- Register Start -->
-    <div class="enrol">
-        <h1>Enrol</h1>
-        <form action="{{ url_for('enrol') }}" method="post" autocomplete="off">
-            <label for="Studentname">
+    <div class="register">
+        <h1>Register</h1>
+        <form action="{{ url_for('reg') }}" method="post" autocomplete="off">
+            <label for="Username">
                 <i class="fa fa-user"></i>
             </label>
-            <input type="text" name="Student name" placeholder="Student name" id="studentname" required>
-            <label for="Parent mobile">
-                <i class="fa fa-phone-alt"></i>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <label for="Password">
+                <i class="fa fa-lock"></i>
             </label>
-            <input type="text" name="Parent mobile" placeholder="Parent mobile" id="parentmobile" required>
-            <label for="Former class atten....">
-                <i class="fa fa-graduation-cap"></i>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <label for="Email">
+                <i class="fa fa-envelope-open"></i>
             </label>
-            <input type="text" name="Former class atten...." placeholder="Former class atten...." id="Formerclass" required>
-            <label for="Address">
-                <i class="fa fa-globe"></i>
+            <input type="email" name="email" placeholder="Email" id="email" required>
+            <label for="address">
+                <i class="fa fa-envelope-open"></i>
             </label>
-            <input type="text" name="Address" placeholder="Address" id="address" required>
+            <input type="text" name="address" placeholder="address" id="address" required>
+            <label for="school">
+                <i class="fa fa-envelope-open"></i>
+            </label>
+            <input type="text" name="school" placeholder="school" id="school" required>
+            <p style="text-align: center;">Already have an account?<a href="{{ url_for('login') }}"> Login</a></p>
             <div class="msg">{{ msg }}</div>
             <button type="submit" id="demo">Submit</button>
         </form>
