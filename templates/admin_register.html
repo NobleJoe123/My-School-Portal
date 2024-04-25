@@ -46,7 +46,7 @@
     <!-- Register Start -->
     <div class="register">
         <h1>Register</h1>
-        <form action="{{ url_for('reg') }}" method="post" autocomplete="off">
+        <form action="{{ url_for('admin_register') }}" method="post" autocomplete="off">
             <label for="Username">
                 <i class="fa fa-user"></i>
             </label>
@@ -59,14 +59,6 @@
                 <i class="fa fa-envelope-open"></i>
             </label>
             <input type="email" name="email" placeholder="Email" id="email" required>
-            <label for="address">
-                <i class="fa fa-envelope-open"></i>
-            </label>
-            <input type="text" name="address" placeholder="address" id="address" required>
-            <label for="school">
-                <i class="fa fa-envelope-open"></i>
-            </label>
-            <input type="text" name="school" placeholder="school" id="school" required>
             <p style="text-align: center;">Already have an account?<a href="{{ url_for('login') }}"> Login</a></p>
             <div class="msg">{{ msg }}</div>
             <button type="submit" id="demo">Submit</button>
