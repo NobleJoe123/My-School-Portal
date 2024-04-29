@@ -59,24 +59,6 @@ def admin_register():
         msg = 'Please fill out the form!'
     return render_template('admin_register.html', msg=msg)
 
-@app.route('/register/user', methods=['GET', 'POST'])
-def user_register():
-    msg = ''
-    if request.method == 'POST' and 'student' in request.form and 'parent' in request.form and 'former' in request.form and 'address' in request.form:
-        student = request.form['student']
-        parent = request.form['parent']
-        former = request.form['former']
-        address = request.form['address']
-        cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO enrol VALUES (NULL, %s, %s, %s, %s)', 
-                       (student, parent, former, address))
-        mysql.connection.commit()
-        msg = 'You have successfully registered!'
-        return render_template('login.html', msg=msg)
-    elif request.method == 'POST':
-        msg = 'Please fill out the form!'
-    return render_template('user_register.html', msg=msg)
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -96,6 +78,25 @@ def login():
         else:
             msg = 'Incorrect username / password !'
     return render_template('login.html', msg = msg)
+
+
+
+@app.route('/register/user', methods=['GET', 'POST'])
+def user_register():
+    msg = ''
+    if request.method == 'POST' and 'student' in request.form and 'parent' in request.form and 'former' in request.form and 'address' in request.form:
+        student = request.form['student']
+        parent = request.form['parent']
+        former = request.form['former']
+        address = request.form['address']
+        cursor = mysql.connection.cursor()
+        cursor.execute('INSERT INTO enrol VALUES (NULL, %s, %s, %s, %s, %s)', (student, parent, former, address))
+        mysql.connection.commit()
+        msg = 'You have successfully registered!'
+        return render_template('login.html', msg=msg)
+    elif request.method == 'POST':
+        msg = 'Please fill out the form!'
+    return render_template('user_register.html', msg=msg)
 
 if __name__ == '__main__':
     
