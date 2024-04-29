@@ -90,7 +90,7 @@ def user_register():
         former = request.form['former']
         address = request.form['address']
         cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO enrol VALUES (NULL, %s, %s, %s, %s, %s)', (student, parent, former, address))
+        cursor.execute('INSERT INTO enrol VALUES (NULL, %s, %s, %s, %s)', (student, parent, former, address))
         mysql.connection.commit()
         msg = 'You have successfully registered!'
         return render_template('login.html', msg=msg)
