@@ -37,6 +37,12 @@ def about():
         return redirect(url_for('about'))
     return render_template('about.html')
 
+@app.route('/courses', methods=['GET', 'POST'])
+def courses():
+    if request.method == 'POST':
+        return redirect(url_for('courses'))
+    return render_template('courses.html')
+
 
 @app.errorhandler(404)
 def page_not_found(e):
