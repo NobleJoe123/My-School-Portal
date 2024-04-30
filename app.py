@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect, request, url_for, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
+from datetime import datetime
+
 
 
 
@@ -44,14 +46,12 @@ def page_not_found(e):
 @app.route('/register/admin', methods=['GET', 'POST'])
 def admin_register():
     msg = ''
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form and 'address' in request.form and 'school' in request.form:
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
         username = request.form['username']
         password = request.form['password']
         email = request.form['email']
-        address = request.form['address']
-        school = request.form['school']
         cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO reg VALUES (NULL, %s, %s, %s, %s, %s)', (username, password, email, address, school))
+        cursor.execute('INSERT INTO reg VALUES (NULL, %s, %s, %s)', (username, password, email))
         mysql.connection.commit()
         msg = 'You have successfully registered!'
         return render_template('login.html', msg=msg)
@@ -84,13 +84,13 @@ def login():
 @app.route('/register/user', methods=['GET', 'POST'])
 def user_register():
     msg = ''
-    if request.method == 'POST' and 'student' in request.form and 'parent' in request.form and 'former' in request.form and 'address' in request.form:
+    if request.method == 'POST' and 'student' in request.form and 'parent' in request.form and 'former' in request.form and 'address' in request.form :
         student = request.form['student']
         parent = request.form['parent']
         former = request.form['former']
         address = request.form['address']
         cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO enrol VALUES (NULL, %s, %s, %s, %s)', (student, parent, former, address))
+        cursor.execute('INSERT INTO enrol VALUES (NULL, %s, %s, %s, %s, %s)', (student, parent, former, address, datetime.now()))
         mysql.connection.commit()
         msg = 'You have successfully registered!'
         return render_template('login.html', msg=msg)

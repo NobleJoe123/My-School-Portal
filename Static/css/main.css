@@ -499,6 +499,7 @@
 .enrol form input[type="password"],
 .enrol form input[type="text"],
 .enrol form input[type="email"],
+.enrol form input[type="number"],
 .login form input[type="password"],
 .login form input[type="text"],
 .login form input[type="email"],
