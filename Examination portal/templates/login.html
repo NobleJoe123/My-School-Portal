@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+
+<body>
+    <div class="login">
+        <h1>Examportal</h1>
+        <div class="links">
+            <img class="rounded-circle article-img" alt="School Logo">
+            <a href="/log" class="active">Login</a>
+             
+        </div>
+        <form action="{{ url_for('log') }}" method="post" autocomplete="off">
+            <label for="username">Username
+                <i class="fa fa-user"></i>
+            </label>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <label for="password">Password
+                <i class="fa fa-lock"></i>
+            </label>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <div class="msg">{{ msg }}</div>
+            <br> <br>
+            <button type="submit" id="demo">Submit</button>
+        </form>
+        <script>
+            onclick = document.getElementById('demo').innerHTML = SubmitEvent()
+            onkeypress = document.getElementById('demo').innerHTML = SubmitEvent()
+        </script>
+</body>
+
+</html>
