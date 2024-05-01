@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head> 
+        <title>Dash Board</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/style.css" type="text/css">
+        <link rel="stylesheet" href="static/css/skins/pink.css" type="text/css">
+
+                                  <!--Live Style Switcher - Demo Only-->
+        <link rel="stylesheet" class="alternate-style" title="pink" href="static/css/skins/pink.css" type="text/css" disabled>
+        <link rel="stylesheet" class="alternate-style" title="blue" href="static/css/skins/blue.css" type="text/css" disabled>
+        <link rel="stylesheet" class="alternate-style" title="orange" href="static/css/skins/orange.css" type="text/css" disabled>
+        <link rel="stylesheet" class="alternate-style" title="yellow" href="static/css/skins/yellow.css" type="text/css" disabled>
+        <link rel="stylesheet" class="alternate-style" title="green" href="static/css/skins/green.css" type="text/css" disabled>
+
+        <link rel="stylesheet" href="static/css/styleSwitcher.css" type="text/css">
+
+
+    </head>
+   <body>
+
+     <div class="preloaded">
+        <div class="loader">
+
+        </div>
+     </div>
+
+       <!--main-container-->  
+       <div class="main-container">
+          <!--Aside begins-->
+           <div class="aside">
+               <!--logo-->
+               <div class="logo">
+                <img src="static/images/about/9.png" style="border-radius: 60px;" alt="School Logo" class="shadow-dark" width="120px" height="120px">
+                   <a href="#" style="color: #0dcaf0;">Jascube Tech</a> 
+               </div>
+               <!--Nav Toggle btn-->
+               <div class="nav-toggle">
+                   <span></span>
+               </div>
+               <!--Nav-->
+               <ul class="nav">
+                  <li><a href="{{ url_for('admin')}}" class="active"><i class="fa fa-user"></i>Admin</a></li>
+                  <li><a href="{{ url_for('teacher') }}"><i class="fa fa-user"></i>Teacher</a></li>
+                  <li><a href="{{ url_for('student') }}"><i class="fa fa-user"></i>Student</a></li>
+                  <li><a href="#portfolio"><i class="fa fa-user"></i>Non-Teaching</a></li>
+                  <li><a href="#blog"><i class="fa fa-arrow"></i>File Download</a></li>
+                  <li><a href="{{ url_for('upload') }}"><i class="fa fa-arrow"></i>File Upload</a></li>
+                  
+               </ul>
+               <!--Copyright-->
+               <div class="copyright-text" style="color: #0dcaf0;">
+                    &copy; @Jascube Technologies 
+               </div>
+           <!--Aside ends-->
+
+           <!--Main content-->
+           <div class="main-content"> 
+               <!--Home Section-->
+               <section class="home section active" id="home">
+                <div class="card-one"><a href="#">
+                  <div class="contain">
+                  <h1>Teachers</h1>
+                  <h2>{{ teacher_count }}</h2>
+                  </div>
+                  </a>   
+                 </div>
+            
+                <div class="card-two"><a href="#">
+                  <div class="contain">
+                  <h1>Students</h1>
+                  <h2><p>{{ student_count }}</p></h2>
+                  </div>
+                  </a>
+                </div>
+                
+                <div class="card-three"><a href="#">
+                  <div class="contain">
+                  <h1>Admin</h1>
+                  <h2><p>{{ admin_count }}</p></h2>
+                  </div>
+                  </a>
+                </div>
+
+                <div class="search">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                </div>
+
+                <table id="myTable">
+                  {% for row in data %}
+                  <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</a></td>
+                    <td style="font-size: medium;"><a  href="">View</a>   <a  href="">Modify</a></td>
+                  </tr>
+                  {% endfor %}
+                </table>
+               </section>
+              </div>
+           </div>
+
+<!-- Lightbox begins-->
+<div class="lightbox">
+  <div class="lightbox-content">
+    <div class="lightbox-close">&times;</div>
+    <img src="images/portfolio/1a.png" class="lightbox-img" onclick="nextItem()">
+    <div class="lightbox-caption">
+      <div class="caption-text">Web Design</div>
+      <div class="caption-counter"></div>
+   </div>
+  </div>
+  <div class="lightbox-controls">
+    <div class="prev-item" onclick="prevItem"><i class="fa fa-angle-left"></i></div>
+    <div class="next-item" onclick="nextItem"><i class="fa fa-angle-right"></i></div>
+  </div>
+</div>
+<!-- Lightbox ends-->
+
+<!--Live Switcher begins-->
+<div class="style-switcher">
+  <div class="toggle-style-switcher">
+    <i class="fa fa-cog fa-spin" ></i>
+  </div>
+  <h5>Style Switcher</h5>
+  <ul>
+    <li><a href="Javascript:void(0);" title="pink" style="background-color: #ec1839" onclick="setActiveStyle('pink')"></a></li>
+    <li><a href="Javascript:void(0);" title="blue" style="background-color: #0dcaf0" onclick="setActiveStyle('blue')"></a></li>
+    <li><a href="Javascript:void(0);" title="orange" style="background-color: #fa5b0f" onclick="setActiveStyle('orange')"></a></li>
+    <li><a href="Javascript:void(0);" title="yellow" style="background-color: #ffb400" onclick="setActiveStyle('yellow')"></a></li>
+    <li><a href="Javascript:void(0);" title="green" style="background-color: #72b626" onclick="setActiveStyle('green')"></a></li>
+  </ul>
+  <h5>Body Skin</h5>
+  <label>
+    <input type="radio" class="body-skin" name="body-style" value="light" checked="true">
+    Light
+  </label>
+  <input type="radio" class="body-skin" name="body-style" value="dark">
+    Dark
+  </label>
+</div>
+<!--Live Switcher end-->
+
+<!--Javascript Template-->
+<script src="static/js/script.js"></script>
+
+<!-- styleSwitcher Javascript -->
+<script src="static/js/styleSwitcher.js"></script>
+</body>
+</html>

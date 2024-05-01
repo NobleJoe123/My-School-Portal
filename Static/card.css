@@ -9,16 +9,16 @@ body{
 h1{
     position:relative;
     text-align: end;
-    left: 60%;
+    left: 18%;
     
 
 }
 .column{
     position: relative;
-    left: 80%;
+    left: 40%;
     float: left;
     width: 25%;
-    padding: 0 10px;
+    padding: 0 30px;
 }
 .row{
     margin: 0 -5px;
@@ -35,7 +35,8 @@ h1{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
-    width: fit-content;
+    width: 120%;
+    /* width: fit-content; */
     /* padding-bottom: 30px;
     padding-top: 20px;
     padding-left: 20px;

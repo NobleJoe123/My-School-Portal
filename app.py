@@ -78,10 +78,12 @@ def login():
         if account:
             session['loggedin'] = True
             session['Id'] = account['id']
-            session['Username'] = account['Username']
+            session['Username'] = account['username']
+            
             msg = 'Logged in successfully !'
-            return render_template('contact.html', msg = 'username')
+            return render_template('student.html', msg = 'username')
         else:
+            return render_template('admin.html', msg= 'username' )
             msg = 'Incorrect username / password !'
     return render_template('login.html', msg = msg)
 
@@ -103,6 +105,63 @@ def user_register():
     elif request.method == 'POST':
         msg = 'Please fill out the form!'
     return render_template('user_register.html', msg=msg)
+
+@app.route("/logout")
+def logout():
+    session.pop('loggedin', None)
+    session.pop('userid', None)
+    session.pop('email', None)
+
+    return redirect(url_for('home'))
+
+
+
+@app.route('/')
+@app.route('/admin')
+def admin():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Sname, Phone FROM admin")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM admin")
+    admin_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('admin.html', data=data, admin_count=admin_count)
+
+@app.route('/teacher')
+def teacher():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT  Fname, Sname, Phone FROM teacher")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM teacher")
+    teacher_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('teacher.html', data=data, teacher_count=teacher_count)
+
+@app.route('/student')
+def student():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Admin no FROM student")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM student")
+    student_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('student.html', data=data, student_count=student_count)
+
+
+@app.route('/view/<int:id>')
+def view(id):
+    return f'Viewing row  with ID {id}'
+
+@app.route('/modify/<int:id>')
+def modify(id):
+    return f'Modifying row  with ID {id}'
+
+@app.route('/upload', methods=['GET'])
+def upload():
+    return render_template('upload.html',)
+
+
+
 
 if __name__ == '__main__':
     
