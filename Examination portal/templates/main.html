@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="/static/static/assets/img/favicon.png" rel="icon">
-  <link href="/static/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -23,8 +23,6 @@
   <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/static/card.css">
-  <link rel="stylesheet" href="/static/notify.css">
 
   <!-- Template Main CSS File -->
   <link href="/static/assets/css/style.css" rel="stylesheet">
@@ -53,7 +51,7 @@
 
       <div class="profile">
         <img src="/static/assets/img/schoologo.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="{{ url_for('index')}}">{{ session.username}}</a></h1>
+        <h1 class="text-light"><a href="base.html"></a></h1>
         <div class="social-links mt-3 text-center">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
           <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -66,18 +64,62 @@
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           <li><a href="#" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#" class="notification" class="nav-link scrollto"><i class="bx bx-user"></i> <span>School fee</span><span class="badge">2</span></a></li>
-          <li><a href="#" class="notification" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Exam</span><span class="badge">3</span></a></li>
-          <li><a href="#" class="notification" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Test</span><span class="badge">2 </span></a></li>
-          <li><a href="#" class="notification" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Assignment</span><span class="badge">3</span></a></li>
+          <li><a href="#" class="nav-link scrollto"><i class="bx bx-user"></i> <span>School fee</span></a></li>
+          <!-- <div class="container">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Login
+              <span class="#"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+              </ul>
+            </div>
+          </div><br> -->
+          <li><a href="#" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Exam</span></a></li>
+          <!-- <div class="container">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Exam
+              <span class="#"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+              </ul>
+            </div>
+          </div><br> -->
+          <li><a href="#" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Test</span></a></li>
+          <!-- <div class="container">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Test
+              <span class="#"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+              </ul>
+            </div>
+          </div><br> -->
+          <li><a href="#" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Assignment</span></a></li>
+          <!-- <div class="container">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Assignment
+              <span class="#"></span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+              </ul>
+            </div>
+          </div><br> -->
           <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> -->
           <div class="container">
             <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle"  type="button" id="menu1" data-toggle="dropdown"><i class="bx bx-user"></i> Profile
+              <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Profile
               <span class="#"></span></button>
               <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                 <li role="presentation"><a role="menuitem" href="#">change password</a></li>
-                <li role="presentation"><a role="menuitem" href="{{ url_for('logout')}}">Logout</a></li>
+                <li role="presentation"><a role="menuitem" href="#">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -92,89 +134,8 @@
     <!-- <div class="hero-container" data-aos="fade-in"> -->
       <!-- <h1>Alex Smith</h1>
       <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p> -->
-    <!-- </div> -->
-  <!-- </section>End Hero -->
-  <h1> STUDENT DASH BOARD</h1> <br>
-  <div class="row">
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Mathematics</h3>
-      </a>
-      </div>
-      
     </div>
-    <div class="column">
-      <div class="card"><a href=""> 
-        <h3>English</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href=""> 
-        <h3>Physics</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href=""> 
-        <h3>Chemistry</h3>
-      </a>
-      </div>
-    </div>
-  </div><br>
-  <div class="row">
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Agricultural</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Economics</h3>
-      </div>
-      </a>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Biology</h3>
-      </div>
-      </a>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Book-Keeping</h3>
-      </div>
-      </a>
-    </div>
-  </div><br>
-  <div class="row">
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Government</h3>
-      </div>
-      </a>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Account</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Geography</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Literature</h3>
-      </a>
-      </div>
-    </div>
-  </div><br>
-
+  </section>End Hero
 
   <main id="main">
 
@@ -734,10 +695,10 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-  </footer>End  Footer -->
+  </footer><!-- End  Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -747,7 +708,7 @@
   <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/ststic/assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/staticassets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/static/assets/vendor/typed.js/typed.umd.js"></script>
   <script src="/static/assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="/static/assets/vendor/php-email-form/validate.js"></script>
