@@ -75,19 +75,28 @@ def login():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM reg WHERE username = % s AND password = % s', (username, password, ))
         account = cursor.fetchone()
-        if account:
-            session['loggedin'] = True
-            session['Id'] = account['id']
-            session['Username'] = account['username']
-            
-            msg = 'Logged in successfully !'
-            return render_template('student.html', msg = 'username')
+        if username == 'admin' and password == 'password':
+            return redirect(url_for('admin_dashboard'))
         else:
-            return render_template('admin.html', msg= 'username' )
-            msg = 'Incorrect username / password !'
-    return render_template('login.html', msg = msg)
+            return redirect(url_for('user_dashboard'))
+    return redirect('login.html')
+    #     if account:
+    #         session['loggedin'] = True
+    #         session['Id'] = account['id']
+    #         session['Username'] = account['username']
+    #         msg = 'Logged in successfully !'
+    #         return render_template('admin.html', msg = 'username')
+    #     else:
+    #         msg = 'Incorrect username / password !'
+    # return render_template('login.html', msg = msg)
 
+@app.route('/admin_dashboard')
+def admin_dashboard():
+    return render_template('admin_dashboard.html')
 
+@app.route('/user_dashboard')
+def admin_dashboard():
+    return render_template('user_dashboard.html')
 
 @app.route('/register/user', methods=['GET', 'POST'])
 def user_register():
@@ -132,7 +141,7 @@ def teacher():
     cur = mysql.connection.cursor()
     cur.execute("SELECT  Fname, Sname, Phone FROM teacher")
     data = cur.fetchall()
-    cur.execute("SELECT COUNT(*) FROM teacher")
+    cur.execute("SELECT COUNT(*) FROM teacher") 
     teacher_count = cur.fetchone()[0]
     cur.close()
     return render_template('teacher.html', data=data, teacher_count=teacher_count)
@@ -140,7 +149,7 @@ def teacher():
 @app.route('/student')
 def student():
     cur = mysql.connection.cursor()
-    cur.execute("SELECT Fname, Lname, Admin no FROM student")
+    cur.execute("SELECT Fname, Lname, Adminno FROM student")
     data = cur.fetchall()
     cur.execute("SELECT COUNT(*) FROM student")
     student_count = cur.fetchone()[0]

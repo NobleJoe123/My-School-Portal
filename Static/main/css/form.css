@@ -1,0 +1,80 @@
+.container h1{
+    color: black;
+    padding: 30px 150px;
+}
+
+.container h1:hover{
+    color: blue;
+}
+
+.container{
+    margin-left: 30%;
+    background-color: #0dcaf0;
+    width: 60vw;
+    border-radius: 20px;
+}
+
+ .form-box{
+    padding-bottom: 50px;
+    margin-left: 100px;
+}
+.form-box input{
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 5px;
+    /* height: 20px; */
+    width: 70%;
+}
+
+.form-box label{
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.form-box input[type="submit"]{
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    border: 0;
+    font-weight: bolder;
+    align-items: center;
+    font-size: larger;
+    margin-left: 100px;
+}
+
+table, th, td{
+    border: 1px solid black;
+} 
+table{
+    box-sizing: border-box;
+    float: right;
+}  
+
+.menu{
+    background-color: dimgray;
+    height: 60px;
+} 
+
+.menu h1{
+    font-size: xx-large;
+    font-weight: bolder;
+    letter-spacing: 3em;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.nav{
+    background-color: dimgray;
+    width: 50px;
+    box-sizing: border-box;
+    float: left;
+} 
+
+.nav h1{
+    padding: 15px;
+    font-size: xx-large;
+    font-weight: bolder;
+}
