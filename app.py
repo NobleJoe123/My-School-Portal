@@ -66,6 +66,26 @@ def admin_register():
     return render_template('admin_register.html', msg=msg)
 
 
+@app.route('/admin/login', methods=['GET', 'POST'])
+def admin_login():
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM admin WHERE username = % s AND password = % s', (username, password, ))
+        account = cursor.fetchone()
+        if account:
+            session['loggedin'] = True
+            session['Id'] = account['id']
+            session['Username'] = account['Username']
+            msg = 'Logged in successfully !'
+            return render_template('admin_dashboard.html', msg = 'username')
+        else:
+            msg = 'Incorrect username / password !'
+    return render_template('admin_login.html', msg = msg)
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     msg = ''
