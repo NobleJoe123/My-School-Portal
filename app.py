@@ -75,28 +75,17 @@ def login():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM reg WHERE username = % s AND password = % s', (username, password, ))
         account = cursor.fetchone()
-        if username == 'admin' and password == 'password':
-            return redirect(url_for('admin_dashboard'))
+        if account:
+            session['loggedin'] = True
+            session['Id'] = account['id']
+            session['Username'] = account['username']
+            msg = 'Logged in successfully !'
+            return render_template('user_dashboard.html', msg = 'username')
         else:
-            return redirect(url_for('user_dashboard'))
-    return redirect('login.html')
-    #     if account:
-    #         session['loggedin'] = True
-    #         session['Id'] = account['id']
-    #         session['Username'] = account['username']
-    #         msg = 'Logged in successfully !'
-    #         return render_template('admin.html', msg = 'username')
-    #     else:
-    #         msg = 'Incorrect username / password !'
-    # return render_template('login.html', msg = msg)
+            msg = 'Incorrect username / password !'
+    return render_template('login.html', msg = msg)
 
-@app.route('/admin_dashboard')
-def admin_dashboard():
-    return render_template('admin_dashboard.html')
 
-@app.route('/user_dashboard')
-def admin_dashboard():
-    return render_template('user_dashboard.html')
 
 @app.route('/register/user', methods=['GET', 'POST'])
 def user_register():
