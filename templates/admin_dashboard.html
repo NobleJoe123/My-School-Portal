@@ -46,9 +46,9 @@
                   <li><a href="{{ url_for('teacher') }}"><i class="fa fa-user"></i>Teacher</a></li>
                   <li><a href="{{ url_for('student') }}"><i class="fa fa-user"></i>Student</a></li>
                   <li><a href="#portfolio"><i class="fa fa-user"></i>Non-Teaching</a></li>
-                  <li><a href="#blog"><i class="fa fa-arrow"></i>File Download</a></li>
-                  <li><a href="{{ url_for('upload') }}"><i class="fa fa-arrow"></i>File Upload</a></li>
-                  
+                  <li><a href="#blog"><i class="fa fa-download"></i>File Download</a></li>
+                  <li><a href="{{ url_for('upload') }}"><i class="fa fa-upload"></i>File Upload</a></li>
+                  <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i>Logout</a></li>
                </ul>
                <!--Copyright-->
                <div class="copyright-text" style="color: #0dcaf0;">
@@ -145,7 +145,7 @@
     <input type="radio" class="body-skin" name="body-style" value="light" checked="true">
     Light
   </label>
-  <input type="radio" class="body-skin" name="body-style" value="dark">
+  <input type="radio" class="body-skins" name="body-style" value="dark">
     Dark
   </label>
 </div>

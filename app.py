@@ -1,8 +1,11 @@
-from flask import Flask, render_template, redirect, request, url_for, session
+from flask import Flask, render_template, redirect, request, url_for, session, send_file
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
+import os
 from datetime import datetime
+from werkzeug.utils import secure_filename
+
 
 
 
@@ -42,6 +45,24 @@ def courses():
     if request.method == 'POST':
         return redirect(url_for('courses'))
     return render_template('courses.html')
+
+
+# @app.route('/upload_avatar', methods=['POST'])
+# def upload_avatar():
+#     avatar = request.files['avatar']
+#     filename = secure_filename(avatar.filename)
+#     avatar.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+#     cursor.execute("UPDATE users SET avatar = %s WHERE id = %s", (, (link unavailable)))
+#     mysql.connection.commit()
+#     return 'Avatar uploaded successfully!'
+
+
+# @app.route('/images/<string:filename>')
+# def display_image(filename):
+#     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], filename), mimetype='image/jpeg')
+
+
 
 
 @app.errorhandler(404)

@@ -1,10 +1,10 @@
 .aside .logo a::before{
-    border-top:4px solid #fa5b0f;
-    border-left:4px solid #fa5b0f;
+    border-top:4px solid #ffff00;
+    border-left:4px solid #ffff00;
 }
 .aside .logo a::after{
-    border-right:4px solid #fa5b0f;
-    border-bottom:4px solid #fa5b0f;
+    border-right:4px solid #ffff00;
+    border-bottom:4px solid #ffff00;
 }
 .contact .contact-info-item .icon .fa,
 .blog .blog-item-inner .blog-info .blog-tags a,
@@ -19,7 +19,7 @@ body.dark .aside .nav li a.active,
 body.dark .aside .nav li a:hover,
 .aside .nav li a:hover,
 .aside .nav li a.active{
-    color: #fa5b0f;
+    color: #ffff00;
 }
 .blog .blog-item-inner .blog-img .blog-date,
 .service .service-item .service-item-inner:hover .icon,
@@ -33,9 +33,9 @@ body.dark .aside .nav li a:hover,
 .aside .nav-toggle span::before,
 .aside .nav-toggle span::after,
 .home .intro .social-links a{
-    background-color: #fa5b0f;
+    background-color: #ffff00;
 }
 .portfolio .portfolio-filter button.active{
-    border-color: #fa5b0f;
+    border-color: #ffff00;
 
 }

@@ -168,7 +168,7 @@ h6 {
 
 .nav-menu>ul>li {
   position: relative;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   
 }
 /* .nav-menu .notification {
@@ -180,15 +180,7 @@ h6 {
     display: inline-block;
     border-radius: 2px;
   } */
-.nav-menu .notification .badge{
-  /* position: absolute; */
-  /* top: -10px;
-  right: -10px; */
-  /* padding: 5px 10px; */
-  border-radius: 50%;
-  background: #0dcaf0;
-  color: white;
-}
+
 .nav-menu a,
 .nav-menu a:focus {
   display: flex;

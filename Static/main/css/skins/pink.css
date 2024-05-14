@@ -1,11 +1,14 @@
 .aside .logo a::before{
-    border-top:4px solid #0dcaf0;
-    border-left:4px solid #0dcaf0;
+    border-top:4px solid #f00d0d;
+    border-left:4px solid #f00d0d;
 }
 .aside .logo a::after{
-    border-right:4px solid #0dcaf0;
-    border-bottom:4px solid #0dcaf0;
+    border-right:4px solid #f00d0d;
+    border-bottom:4px solid #b61313;
 }
+.back-to-top ,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active ,
 .contact .contact-info-item .icon .fa,
 .blog .blog-item-inner .blog-info .blog-tags a,
 .lightbox .lightbox-controls .prev-item .fa,
@@ -19,8 +22,11 @@ body.dark .aside .nav li a.active,
 body.dark .aside .nav li a:hover,
 .aside .nav li a:hover,
 .aside .nav li a.active{
-    color: #0dcaf0;
+    color: #f00d0d;
 }
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover,
 .blog .blog-item-inner .blog-img .blog-date,
 .service .service-item .service-item-inner:hover .icon,
 .about .about-content .timeline .circle-dot,
@@ -33,8 +39,19 @@ body.dark .aside .nav li a:hover,
 .aside .nav-toggle span::before,
 .aside .nav-toggle span::after,
 .home .intro .social-links a{
-    background-color: #0dcaf0;
+    background-color: #f00d0d;
+    color: #FFFFFF;
+    border: none;
 }
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover,
+.navbar-nav .nav-item,
 .portfolio .portfolio-filter button.active{
-    border-color: #0dcaf0;
+    border-color: #f00d0d;
+}
+
+
+.footer .btn.btn-link{
+    color: #FFFFFF;
+    background: none;
 }
