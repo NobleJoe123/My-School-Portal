@@ -23,7 +23,7 @@
   <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/static/card.css">
+  <link rel="stylesheet" href="/static/tab.css">
   <link rel="stylesheet" href="/static/notify.css">
 
   <link rel="stylesheet" class="alternate-style" title="pink" href="/static/main/css/skins/pink.css" type="text/css" disabled>
@@ -74,16 +74,17 @@
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="#" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="{{ url_for('user_dashboard')}}" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#" class="notification" class="nav-link scrollto"><i class="bx bx-user"></i>School fee<span class="badge">2</span></span></a></li>
           <li><a href="#" class="notification" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Exam</span><span class="badge">3</span></a></li>
           <li><a href="#" class="notification" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Test</span><span class="badge">2 </span></a></li>
           <li><a href="#" class="notification" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Assignment</span><span class="badge">3</span></a></li>
-          <li><a href="{{ url_for('result')}}" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Result</span></a></li>
+          <li><a href="#" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Result</span></a></li>
           <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> -->
           <div class="container">
             <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle"  type="button" id="menu1" data-toggle="dropdown"><i class="bx bx-user"></i> Profile</button>
+              <button class="btn btn-default dropdown-toggle"  type="button" id="menu1" data-toggle="dropdown"><i class="bx bx-user"></i> Profile
+              <span class="#"></span></button>
               <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                 <li role="presentation"><a role="menuitem" href="#">change password</a></li>
                 <li role="presentation"><a role="menuitem" href="{{ url_for('logout')}}">Logout</a></li>
@@ -103,86 +104,14 @@
       <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p> -->
     <!-- </div> -->
   <!-- </section>End Hero -->
-  <h1 class="prada"> STUDENT DASH BOARD</h1> <br>
-  <div class="row">
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Mathematics</h3>
-      </a>
-      </div>
-      
-    </div>
-    <div class="column">
-      <div class="card"><a href=""> 
-        <h3>English</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href=""> 
-        <h3>Physics</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href=""> 
-        <h3>Chemistry</h3>
-      </a>
-      </div>
-    </div>
-  </div><br>
-  <div class="row">
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Agricultural</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Economics</h3>
-      </div>
-      </a>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Biology</h3>
-      </div>
-      </a>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Book-Keeping</h3>
-      </div>
-      </a>
-    </div>
-  </div><br>
-  <div class="row">
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Government</h3>
-      </div>
-      </a>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Account</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Geography</h3>
-      </a>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card"><a href="">
-        <h3>Literature</h3>
-      </a>
-      </div>
-    </div>
-  </div><br>
+  <table style="width:80%">
+    <tr>
+        <th>Subjects</th>
+        <th>1st Term</th>
+        <th>2nd Term</th>
+        <th>3rd Term</th>
+    </tr>
+  </table>
 
 
   <main id="main">

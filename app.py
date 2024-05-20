@@ -46,6 +46,12 @@ def courses():
         return redirect(url_for('courses'))
     return render_template('courses.html')
 
+@app.route('/result', methods=['GET', 'POST'])
+def result():
+    if request.method == 'POST':
+        return redirect(url_for('result'))
+    return render_template('result.html')
+
 
 # @app.route('/upload_avatar', methods=['POST'])
 # def upload_avatar():
@@ -127,6 +133,9 @@ def login():
     return render_template('login.html', msg = msg)
 
 
+@app.route('/user_dashboard')
+def user_dashboard ():
+    return render_template('user_dashboard.html')
 
 @app.route('/register/user', methods=['GET', 'POST'])
 def user_register():
@@ -195,9 +204,17 @@ def view(id):
 def modify(id):
     return f'Modifying row  with ID {id}'
 
-@app.route('/upload', methods=['GET'])
-def upload():
-    return render_template('upload.html',)
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    cursor = mysql.connection.cursor()
+    file = request.files['file']
+    cursor.execute('INSERT INTO files (name, data) VALUES(%s, %s)',(file.filename, file.read()))
+    mysql.connection.commit()
+    return '<h1>File Uploaded Successfully</h1>'
+
+
+
+
 
 
 

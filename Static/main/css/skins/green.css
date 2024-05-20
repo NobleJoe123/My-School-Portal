@@ -6,6 +6,10 @@
     border-right:4px solid #72b626;
     border-bottom:4px solid #72b626;
 }
+.text-primary,
+.back-to-top ,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active ,
 .contact .contact-info-item .icon .fa,
 .blog .blog-item-inner .blog-info .blog-tags a,
 .lightbox .lightbox-controls .prev-item .fa,
@@ -21,6 +25,10 @@ body.dark .aside .nav li a:hover,
 .aside .nav li a.active{
     color: #72b626;
 }
+.footer .btn.btn-social:hover,
+.service-item:hover,
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover,
 .blog .blog-item-inner .blog-img .blog-date,
 .service .service-item .service-item-inner:hover .icon,
 .about .about-content .timeline .circle-dot,
@@ -34,8 +42,29 @@ body.dark .aside .nav li a:hover,
 .aside .nav-toggle span::after,
 .home .intro .social-links a{
     background-color: #72b626;
+    color: #FFFFFF;
+    border: none;
 }
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover,
+.navbar-nav .nav-item,
 .portfolio .portfolio-filter button.active{
     border-color: #72b626;
+}
+.footer .btn.btn-social ,
+ .text-primary {
+    color:#72b626;
+    background: none;
 
+}
+
+
+.footer .btn.btn-social{
+    border-color: #72b626;
+
+}
+
+.footer .btn.btn-link{
+    color: #FFFFFF;
+    background: none;
 }

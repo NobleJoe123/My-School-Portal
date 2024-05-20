@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/static/main/css/style.css" type="text/css">
-        <link rel="stylesheet" href="/static/main/css/skins/pink.css" type="text/css">
+        <!-- <link rel="stylesheet" href="/static/main/css/skins/pink.css" type="text/css"> -->
 
                                   <!--Live Style Switcher - Demo Only-->
         <link rel="stylesheet" class="alternate-style" title="pink" href="/static/main/css/skins/pink.css" type="text/css" disabled>
@@ -34,7 +34,7 @@
                <!--logo-->
                <div class="logo">
                 <img src="/static/main/images/about/9.png" style="border-radius: 60px;" alt="School Logo" class="shadow-dark" width="120px" height="120px">
-                   <a href="{{ url_for('home')}}" style="color: #0dcaf0;">Anyi's College</a> 
+                   <a href="{{ url_for('home')}}">Anyi's College</a> 
                </div>
                <!--Nav Toggle btn-->
                <div class="nav-toggle">
@@ -47,7 +47,7 @@
                   <li><a href="{{ url_for('student') }}"><i class="fa fa-user"></i>Student</a></li>
                   <li><a href="#portfolio"><i class="fa fa-user"></i>Non-Teaching</a></li>
                   <li><a href="#blog"><i class="fa fa-download"></i>File Download</a></li>
-                  <li><a href="{{ url_for('upload') }}"><i class="fa fa-upload"></i>File Upload</a></li>
+                  <li><button id="showTextButton"><a href="#"><i class="fa fa-upload"></i>File Upload</a></button></li>
                   <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i>Logout</a></li>
                </ul>
                <!--Copyright-->
@@ -106,9 +106,28 @@
                   </tr>
                   {% endfor %}
                 </table>
+
+                <div id="hiddenText" style="display: none;">
+                  <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file">
+                    <br>
+                    <button type="submit">Submit</button>
+                  </form>
+                </div>
                </section>
               </div>
            </div>
+           <script>
+            document.getElementById("showTextButton").onclick = function() {
+              const hiddenText = document.getElementById("hiddenText");
+              hiddenText.style.display = "block";
+            };
+
+            document.getElementById("cardOne").onclick = function() {
+              const cardData = document.getElementById("cardData");
+              CardData.style.display = "block";
+            };
+           </script>
 
 <!-- Lightbox begins-->
 <div class="lightbox">

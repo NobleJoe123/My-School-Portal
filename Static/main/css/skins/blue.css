@@ -1,13 +1,18 @@
 .aside .logo a::before{
-    border-top:4px solid #2196f3;
-    border-left:4px solid #2196f3;
+    border-top:4px solid  #2196f3;
+    border-left:4px solid  #2196f3;
 }
 .aside .logo a::after{
-    border-right:4px solid #2196f3;
+    border-right:4px solid  #2196f3;
     border-bottom:4px solid #2196f3;
 }
+.aside .logo,
+.text-primary,
+.back-to-top ,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active ,
 .contact .contact-info-item .icon .fa,
-.blog .blog-item-inner .blog-info .blog-tags a, 
+.blog .blog-item-inner .blog-info .blog-tags a,
 .lightbox .lightbox-controls .prev-item .fa,
 .lightbox .lightbox-controls .next-item .fa,
 .portfolio .portfolio-item .portfolio-info .icon .fa,
@@ -19,8 +24,15 @@ body.dark .aside .nav li a.active,
 body.dark .aside .nav li a:hover,
 .aside .nav li a:hover,
 .aside .nav li a.active{
-    color: #2196f3;
+    color:  #2196f3;
 }
+.card-two,
+#hiddenText button,
+#hiddenText input,
+.footer .btn.btn-social:hover,
+.service-item:hover,
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover,
 .blog .blog-item-inner .blog-img .blog-date,
 .service .service-item .service-item-inner:hover .icon,
 .about .about-content .timeline .circle-dot,
@@ -33,9 +45,30 @@ body.dark .aside .nav li a:hover,
 .aside .nav-toggle span::before,
 .aside .nav-toggle span::after,
 .home .intro .social-links a{
-    background-color: #2196f3;
+    background-color:  #2196f3;
+    color: #FFFFFF;
+    border: none;
 }
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover,
+.navbar-nav .nav-item,
 .portfolio .portfolio-filter button.active{
-    border-color: #2196f3;
+    border-color:  #2196f3;
+}
+.footer .btn.btn-social ,
+ .text-primary {
+    color:#2196f3;
+    background: none;
 
+}
+
+
+.footer .btn.btn-social{
+    border-color:  #2196f3;
+
+}
+
+.footer .btn.btn-link{
+    color: #FFFFFF;
+    background: none;
 }

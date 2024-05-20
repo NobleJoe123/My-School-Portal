@@ -1,11 +1,15 @@
 .aside .logo a::before{
-    border-top:4px solid #ffff00;
-    border-left:4px solid #ffff00;
+    border-top:4px solid #ffee00c2;
+    border-left:4px solid #ffee00c2;
 }
 .aside .logo a::after{
-    border-right:4px solid #ffff00;
-    border-bottom:4px solid #ffff00;
+    border-right:4px solid #ffee00c2;
+    border-bottom:4px solid #ffee00c2;
 }
+.text-primary,
+.back-to-top ,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active ,
 .contact .contact-info-item .icon .fa,
 .blog .blog-item-inner .blog-info .blog-tags a,
 .lightbox .lightbox-controls .prev-item .fa,
@@ -19,8 +23,12 @@ body.dark .aside .nav li a.active,
 body.dark .aside .nav li a:hover,
 .aside .nav li a:hover,
 .aside .nav li a.active{
-    color: #ffff00;
+    color: #ffee00c2;
 }
+.footer .btn.btn-social:hover,
+.service-item:hover,
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover,
 .blog .blog-item-inner .blog-img .blog-date,
 .service .service-item .service-item-inner:hover .icon,
 .about .about-content .timeline .circle-dot,
@@ -33,9 +41,30 @@ body.dark .aside .nav li a:hover,
 .aside .nav-toggle span::before,
 .aside .nav-toggle span::after,
 .home .intro .social-links a{
-    background-color: #ffff00;
+    background-color: #ffee00c2;
+    color: #FFFFFF;
+    border: none;
 }
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover,
+.navbar-nav .nav-item,
 .portfolio .portfolio-filter button.active{
-    border-color: #ffff00;
+    border-color: #ffee00c2;
+}
+.footer .btn.btn-social ,
+ .text-primary {
+    color:#ffee00c2;
+    background: none;
 
+}
+
+
+.footer .btn.btn-social{
+    border-color: #ffee00c2;
+
+}
+
+.footer .btn.btn-link{
+    color: #FFFFFF;
+    background: none;
 }

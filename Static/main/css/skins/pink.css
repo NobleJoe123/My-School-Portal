@@ -6,6 +6,7 @@
     border-right:4px solid #f00d0d;
     border-bottom:4px solid #b61313;
 }
+.text-primary,
 .back-to-top ,
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active ,
@@ -24,7 +25,8 @@ body.dark .aside .nav li a:hover,
 .aside .nav li a.active{
     color: #f00d0d;
 }
-
+.footer .btn.btn-social:hover,
+.service-item:hover,
 .header-carousel .owl-nav .owl-prev:hover,
 .header-carousel .owl-nav .owl-next:hover,
 .blog .blog-item-inner .blog-img .blog-date,
@@ -49,7 +51,18 @@ body.dark .aside .nav li a:hover,
 .portfolio .portfolio-filter button.active{
     border-color: #f00d0d;
 }
+.footer .btn.btn-social ,
+ .text-primary {
+    color:#f00d0d;
+    background: none;
 
+}
+
+
+.footer .btn.btn-social{
+    border-color: #f00d0d;
+
+}
 
 .footer .btn.btn-link{
     color: #FFFFFF;
