@@ -113,6 +113,32 @@ def admin_login():
     return render_template('admin_login.html', msg = msg)
 
 
+
+
+@app.route('/teacher/login', methods=['GET', 'POST'])
+def teacher_login():
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM teacher WHERE username = % s AND password = % s', (username, password, ))
+        account = cursor.fetchone()
+        if account:
+            session['loggedin'] = True
+            session['Id'] = account['id']
+            session['Username'] = account['Username']
+            msg = 'Logged in successfully !'
+            return render_template('teacher.html', msg = 'username')
+        else:
+            msg = 'Incorrect username / password !'
+    return render_template('teacher_login.html', msg = msg)
+
+
+
+
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     msg = ''
