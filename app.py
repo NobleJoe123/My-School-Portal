@@ -53,6 +53,23 @@ def result():
     return render_template('result.html')
 
 
+@app.route('/test', methods=['GET', 'POST'])
+def test():
+    if request.method == 'POST':
+        return redirect(url_for('test'))
+    return render_template('test.html')
+
+@app.route('/attend', methods=['GET', 'POST'])
+def attend():
+    return render_template('attendance.html')
+
+@app.route('/notify', methods=['GET', 'POST'])
+def notify():
+    return render_template('notify.html')
+
+
+
+
 # @app.route('/upload_avatar', methods=['POST'])
 # def upload_avatar():
 #     avatar = request.files['avatar']
@@ -129,7 +146,7 @@ def teacher_login():
             session['Id'] = account['id']
             session['Username'] = account['Username']
             msg = 'Logged in successfully !'
-            return render_template('teacher.html', msg = 'username')
+            return render_template('tech.html', msg = 'username')
         else:
             msg = 'Incorrect username / password !'
     return render_template('teacher_login.html', msg = msg)
@@ -220,6 +237,17 @@ def student():
     student_count = cur.fetchone()[0]
     cur.close()
     return render_template('student.html', data=data, student_count=student_count)
+
+
+@app.route('/study')
+def study():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Adminno FROM student")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM student")
+    student_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('study.html', data=data, student_count=student_count)
 
 
 @app.route('/view/<int:id>')
