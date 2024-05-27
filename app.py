@@ -59,9 +59,15 @@ def test():
         return redirect(url_for('test'))
     return render_template('test.html')
 
-@app.route('/attend', methods=['GET', 'POST'])
-def attend():
-    return render_template('attendance.html')
+
+@app.route('/assign', methods=['GET', 'POST'])
+def assign():
+    if request.method == 'POST':
+        return redirect(url_for('assign'))
+    return render_template('assign.html')
+
+
+
 
 @app.route('/notify', methods=['GET', 'POST'])
 def notify():
@@ -153,6 +159,27 @@ def teacher_login():
 
 
 
+@app.route('/bursal/login', methods=['GET', 'POST'])
+def bursal_login():
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM bursal WHERE username = % s AND password = % s', (username, password, ))
+        account = cursor.fetchone()
+        if account:
+            session['loggedin'] = True
+            session['Id'] = account['id']
+            session['Username'] = account['Username']
+            msg = 'Logged in successfully !'
+            return render_template('bursal_dashboard.html', msg = 'username')
+        else:
+            msg = 'Incorrect username / password !'
+    return render_template('bursal_login.html', msg = msg)
+
+
+
 
 
 
@@ -218,6 +245,69 @@ def admin():
     cur.close()
     return render_template('admin.html', data=data, admin_count=admin_count)
 
+@app.route('/std1')
+def std1():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Adminno FROM std1")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM std1")
+    std1_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('study_2.html', data=data, std1_count=std1_count)
+
+@app.route('/std2')
+def std2():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Adminno FROM std2")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM std2")
+    std2_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('study_2.html', data=data, std2_count=std2_count)
+
+@app.route('/std3')
+def std3():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Adminno FROM std3")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM std3")
+    std3_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('study_2.html', data=data, std3_count=std3_count)
+
+
+@app.route('/stds1')
+def stds1():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Adminno FROM stds1")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM stds1")
+    stds1_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('study_2.html', data=data, stds1_count=stds1_count)
+
+
+@app.route('/stds2')
+def stds2():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Adminno FROM stds2")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM stds2")
+    stds2_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('study_2.html', data=data, stds2_count=stds2_count)
+
+@app.route('/stds3')
+def stds3():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Adminno FROM stds3")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM stds3")
+    stds3_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('study_2.html', data=data, stds3_count=stds3_count)
+
+
 @app.route('/teacher')
 def teacher():
     cur = mysql.connection.cursor()
@@ -239,6 +329,14 @@ def student():
     return render_template('student.html', data=data, student_count=student_count)
 
 
+@app.route('/attend', methods=['GET', 'POST'])
+def attend():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT id, Fname, Lname FROM student")
+    data = cur.fetchall()
+    cur.close()
+    return render_template('attendance.html', data=data)
+
 @app.route('/study')
 def study():
     cur = mysql.connection.cursor()
@@ -248,6 +346,29 @@ def study():
     student_count = cur.fetchone()[0]
     cur.close()
     return render_template('study.html', data=data, student_count=student_count)
+
+
+@app.route('/study_2')
+def study_2():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Adminno FROM std1")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM std1")
+    std1_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('study_2.html', data=data, std1_count=std1_count )
+
+@app.route('/study_3')
+def study_3():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT Fname, Lname, Adminno FROM std2")
+    data = cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM std2")
+    std2_count = cur.fetchone()[0]
+    cur.close()
+    return render_template('study_3.html', data=data, std2_count=std2_count )
+
+
 
 
 @app.route('/view/<int:id>')
@@ -265,7 +386,6 @@ def upload_file():
     cursor.execute('INSERT INTO files (name, data) VALUES(%s, %s)',(file.filename, file.read()))
     mysql.connection.commit()
     return '<h1>File Uploaded Successfully</h1>'
-
 
 
 

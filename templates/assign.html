@@ -6,7 +6,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/static/main/css/style.css" type="text/css">
-        <link rel="stylesheet" href="/static/main/css/drop.css">
         <!-- <link rel="stylesheet" href="/static/main/css/skins/pink.css" type="text/css"> -->
 
                                   <!--Live Style Switcher - Demo Only-->
@@ -43,20 +42,14 @@
                </div>
                <!--Nav-->
                <ul class="nav">
-                  <li class="dropdown"><button class="dropbtn"><a href="#" class="#"><i class="fa fa-user"></i>Test <i class="fa fa-caret-down"></i></a></button>
-                  <div class="dropdown-content">
-                    <a href="#">Part Time</a>
-                    <a href="#">Full Time</a>
-                    <a href="#">Distance Class</a>
-                  </div>
-                  </li>
+                  <li><a href="{{ url_for('test')}}" class="#"><i class="fa fa-user"></i>Test</a></li>
                   <li><a href="{{ url_for('attend') }}"><i class="fa fa-user"></i>Attendance</a></li>
                   <li><a href="{{ url_for('notify') }}"><i class="fa fa-user"></i>Notification</a></li>
                   <li><a href="#portfolio"><i class="fa fa-user"></i>News</a></li>
                   <li><a href="#blog"><i class="fa fa-download"></i>Profile</a></li>
                   <li><button id="showTextButton"><a href="#"><i class="fa fa-upload"></i>File Upload</a></button></li>
                   <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i>Logout</a></li>
-                
+               </ul>
                <!--Copyright-->
                <div class="copyright-text" style="color: #0dcaf0;">
                     &copy; @Jascube Technologies 
@@ -82,7 +75,7 @@
                   </a>
                 </div>
                 
-                <div class="card-three"><a href="{{ url_for('assign')}}">
+                <div class="card-three"><a href="#">
                   <div class="contain">
                   <h1>Assignment</h1>
                   </div>
@@ -107,7 +100,7 @@
                     <td>{{ row[0] }}</td>
                     <td>{{ row[1] }}</td>
                     <td>{{ row[2] }}</a></td>
-                    <td style="font-size: medium;"> <a  href="">View</a></td>
+                    <td style="font-size: medium;"><a  href="">View</a>   <a  href="">Modify</a></td>
                   </tr>
                   {% endfor %}
                 </table>
@@ -119,6 +112,11 @@
                     <button type="submit">Submit</button>
                   </form>
                 </div>
+                <form class="assign" action="/assign" method="post">
+                    <h3 class="text-text">Assignment:</h3><br>
+                    <textarea name="assign" id="assign" cols="60" rows="30"></textarea><br>
+                    <button class="assign-btn" type="submit">Submit</button>
+                </form>
                </section>
               </div>
            </div>

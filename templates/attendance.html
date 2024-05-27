@@ -42,9 +42,9 @@
                </div>
                <!--Nav-->
                <ul class="nav">
-                  <li><a href="{{ url_for('test')}}" class="#"><i class="fa fa-user"></i>Test</a></li>
-                  <li><a href="{{ url_for('attend') }}"><i class="fa fa-user"></i>Attendance</a></li>
-                  <li><a href="{{ url_for('notify') }}"><i class="fa fa-user"></i>Notification</a></li>
+                  <li><a href="{{ url_for('test')}}" class=""><i class="fa fa-user"></i>Test</a></li>
+                  <li><a href="{{ url_for('attend') }}" class="active"><i class="fa fa-user"></i>Attendance</a></li>
+                  <li><a href="{{ url_for('notify') }}" ><i class="fa fa-user"></i>Notification</a></li>
                   <li><a href="#portfolio"><i class="fa fa-user"></i>News</a></li>
                   <li><a href="#blog"><i class="fa fa-download"></i>Profile</a></li>
                   <li><button id="showTextButton"><a href="#"><i class="fa fa-upload"></i>File Upload</a></button></li>
@@ -58,41 +58,126 @@
 
            <!--Main content-->
            <div class="main-content"> 
-               <!--Home Section-->
-               <!-- <section class="home section active" id="home">
-                <div class="card-one"><a href="{{ url_for('study')}}">
-                  <div class="contain">
-                  <h1>Student</h1>
-                  <h2>{{ student_count }}</h2>
-                  </div>
-                  </a>   
-                 </div>
-                
-                <div class="card-two"><a href="#">
-                  <div class="contain">
-                  <h1>Exam</h1>
-                  </div>
-                  </a>
-                </div>
-                
-                <div class="card-three"><a href="#">
-                  <div class="contain">
-                  <h1>Assignment</h1>
-                  </div>
-                  </a>
-                </div>
+            <div class="tab-content">
+            <section class="home section active" id="home">
+              <table style="width: 140%;">
+                {% for name in data %}
+                <tr>
+                  <th>Id</th>
+                  <th>Stud Name</th>
+                  <th>Week 1</th>
+                  <th>Week 2</th>
+                  <th>Week 3</th>
+                  <th>Week 4</th>
+                  <th>Week 5</th>
+                  <th>Week 6</th>
+                  <th>Week 7</th>
+                  <th>Week 8</th>
+                  <th>Week 9</th>
+                  <th>Week 10</th>
+                  <th>Week 11</th>
+                  <th>Week 12</th>
+                  <th>Week 13</th>
+                </tr>
+                <tr>
+                  <td>{{ name[0]}}</td>
+                  <td class="name-data">{{ name[1]}} {{name[2] }} </td>
+                  <td><input type="checkbox" name="cb1" id="cb1">
+                      <input type="checkbox" name="cb2" id="cb2">
+                      <input type="checkbox" name="cb3" id="cb3">
+                      <input type="checkbox" name="cb4" id="cb4">
+                      <input type="checkbox" name="cb5" id="cb5">
+                  </td>
 
-                <div class="card-one"><a href="#">
-                  <div class="contain">
-                  <h1>Payment</h1>
-                  </div>
-                  </a>
-                </div>
+                  <td><input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                  <td>
+                    <input type="checkbox" name="cb1" id="cb1">
+                    <input type="checkbox" name="cb2" id="cb2">
+                    <input type="checkbox" name="cb3" id="cb3">
+                    <input type="checkbox" name="cb4" id="cb4">
+                    <input type="checkbox" name="cb5" id="cb5">
+                  </td>
+                </tr>
+                {% endfor %}
+              </table>
+            </section>
+            </div>
 
-
-                <div class="search">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-                </div> -->
 
                 <table id="myTable">
                   {% for row in data %}

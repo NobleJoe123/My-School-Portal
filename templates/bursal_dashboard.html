@@ -5,8 +5,7 @@
         <title>Anyi's College</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/static/main/css/style.css" type="text/css">
-        <link rel="stylesheet" href="/static/main/css/drop.css">
+        <link rel="stylesheet" href="/static/main/css/class.css" type="text/css">
         <!-- <link rel="stylesheet" href="/static/main/css/skins/pink.css" type="text/css"> -->
 
                                   <!--Live Style Switcher - Demo Only-->
@@ -43,62 +42,78 @@
                </div>
                <!--Nav-->
                <ul class="nav">
-                  <li class="dropdown"><button class="dropbtn"><a href="#" class="#"><i class="fa fa-user"></i>Test <i class="fa fa-caret-down"></i></a></button>
-                  <div class="dropdown-content">
-                    <a href="#">Part Time</a>
-                    <a href="#">Full Time</a>
-                    <a href="#">Distance Class</a>
-                  </div>
-                  </li>
-                  <li><a href="{{ url_for('attend') }}"><i class="fa fa-user"></i>Attendance</a></li>
-                  <li><a href="{{ url_for('notify') }}"><i class="fa fa-user"></i>Notification</a></li>
-                  <li><a href="#portfolio"><i class="fa fa-user"></i>News</a></li>
-                  <li><a href="#blog"><i class="fa fa-download"></i>Profile</a></li>
-                  <li><button id="showTextButton"><a href="#"><i class="fa fa-upload"></i>File Upload</a></button></li>
-                  <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i>Logout</a></li>
-                
+                  <li><a href="{{ url_for('admin')}}"><i class="fa fa-credit-card"> </i> School Fees</a></li>
+                  <li><a href="{{ url_for('teacher') }}"><i class="fa fa-subway"> </i> Excursion</a></li>
+                  <li><a href="{{ url_for('student') }}"><i class="fa fa-stethoscope"> </i> Pratical</a></li>
+                  <li><a href="#portfolio"><i class="fa fa-calendar"> </i> Special Event</a></li>
+                  <li><a href="#blog"><i class="fa fa-users"> </i> Uniform/Sport Wear</a></li>
+                  <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+               </ul>
                <!--Copyright-->
                <div class="copyright-text" style="color: #0dcaf0;">
-                    &copy; @Jascube Technologies 
+                    &copy;Jascube Technologies 
                </div>
            <!--Aside ends-->
 
            <!--Main content-->
            <div class="main-content"> 
                <!--Home Section-->
-               <section class="home section active" id="home">
-                <div class="card-one"><a href="{{ url_for('study')}}">
+               <section class="home section active" id="home" >
+                <div class="card-one"><a href="{{ url_for('std1')}}">
                   <div class="contain">
-                  <h1>Student</h1>
-                  <h2>{{ student_count }}</h2>
+                  <h1>JSS1</h1>
+                  <h2>{{ std1_count }}</h2>
                   </div>
                   </a>   
-                 </div>
-                
-                <div class="card-two"><a href="#">
+                </div>
+
+                <div class="card-two"><a href="{{ url_for('std2')}}">
                   <div class="contain">
-                  <h1>Exam</h1>
+                  <h1>JSS2</h1>
+                  <h2>{{ std2_count }}</h2>
                   </div>
                   </a>
                 </div>
                 
-                <div class="card-three"><a href="{{ url_for('assign')}}">
+                <div class="card-three"><a href="{{ url_for('std3')}}">
                   <div class="contain">
-                  <h1>Assignment</h1>
+                  <h1>JSS3</h1>
+                  <h2>{{ std3_count }}</h2>
                   </div>
                   </a>
                 </div>
 
-                <div class="card-one"><a href="#">
+                <div class="card-one"><a href="{{ url_for('stds1')}}">
                   <div class="contain">
-                  <h1>Payment</h1>
+                    <h1>SS1</h1>
+                  <h2>{{ stds1_count }}</h2>
+
                   </div>
                   </a>
+                </div>
+
+                <div class="card-one"><a href="{{ url_for('stds2')}}">
+                    <div class="contain">
+                    <h1>SS2</h1>
+                  <h2>{{ stds2_count }}</h2>
+
+                    </div>
+                    </a>
+                </div>
+
+
+                <div class="card-one"><a href="{{ url_for('stds3')}}">
+                    <div class="contain">
+                    <h1>SS3</h1>
+                  <h2>{{ stds3_count }}</h2>
+
+                    </div>
+                    </a>
                 </div>
 
 
                 <div class="search">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                <input type="text" id="myInput" onkeyup="myFunction()" class="fa fa-search-icon" placeholder="Search for names..">
                 </div>
 
                 <table id="myTable">
@@ -107,7 +122,7 @@
                     <td>{{ row[0] }}</td>
                     <td>{{ row[1] }}</td>
                     <td>{{ row[2] }}</a></td>
-                    <td style="font-size: medium;"> <a  href="">View</a></td>
+                    <td style="font-size: medium;"><a  href="">Paid</a></td>
                   </tr>
                   {% endfor %}
                 </table>

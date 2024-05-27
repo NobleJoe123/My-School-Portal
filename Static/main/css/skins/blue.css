@@ -1,14 +1,15 @@
 .aside .logo a::before{
-    border-top:4px solid  #2196f3;
-    border-left:4px solid  #2196f3;
+    border-top:4px solid #2196f3;
+    border-left:4px solid #2196f3;
 }
 .aside .logo a::after{
-    border-right:4px solid  #2196f3;
+    border-right:4px solid #2196f3;
     border-bottom:4px solid #2196f3;
 }
-.aside .logo,
+.aside .nav li,
 .text-primary,
 .back-to-top ,
+.aside .logo a,
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active ,
 .contact .contact-info-item .icon .fa,
@@ -24,11 +25,12 @@ body.dark .aside .nav li a.active,
 body.dark .aside .nav li a:hover,
 .aside .nav li a:hover,
 .aside .nav li a.active{
-    color:  #2196f3;
+    color: #2196f3;
 }
+#myTable tr,
+.card-one,
 .card-two,
-#hiddenText button,
-#hiddenText input,
+.card-three,
 .footer .btn.btn-social:hover,
 .service-item:hover,
 .header-carousel .owl-nav .owl-prev:hover,
@@ -45,7 +47,7 @@ body.dark .aside .nav li a:hover,
 .aside .nav-toggle span::before,
 .aside .nav-toggle span::after,
 .home .intro .social-links a{
-    background-color:  #2196f3;
+    background-color: #2196f3;
     color: #FFFFFF;
     border: none;
 }
@@ -53,7 +55,7 @@ body.dark .aside .nav li a:hover,
 .header-carousel .owl-nav .owl-next:hover,
 .navbar-nav .nav-item,
 .portfolio .portfolio-filter button.active{
-    border-color:  #2196f3;
+    border-color: #2196f3;
 }
 .footer .btn.btn-social ,
  .text-primary {
@@ -64,7 +66,7 @@ body.dark .aside .nav li a:hover,
 
 
 .footer .btn.btn-social{
-    border-color:  #2196f3;
+    border-color: #2196f3;
 
 }
 
@@ -72,3 +74,5 @@ body.dark .aside .nav li a:hover,
     color: #FFFFFF;
     background: none;
 }
+
+

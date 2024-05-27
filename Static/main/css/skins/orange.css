@@ -1,13 +1,15 @@
 .aside .logo a::before{
-    border-top:4px solid #ffb400;
-    border-left:4px solid #ffb400;
+    border-top:4px solid #ffb400;;
+    border-left:4px solid #ffb400;;
 }
 .aside .logo a::after{
-    border-right:4px solid #ffb400;
+    border-right:4px solid #ffb400;;
     border-bottom:4px solid #ffb400;
 }
+.aside .nav li,
 .text-primary,
 .back-to-top ,
+.aside .logo a,
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active ,
 .contact .contact-info-item .icon .fa,
@@ -23,8 +25,12 @@ body.dark .aside .nav li a.active,
 body.dark .aside .nav li a:hover,
 .aside .nav li a:hover,
 .aside .nav li a.active{
-    color: #ffb400;
+    color: #ffb400;;
 }
+#myTable tr,
+.card-one,
+.card-two,
+.card-three,
 .footer .btn.btn-social:hover,
 .service-item:hover,
 .header-carousel .owl-nav .owl-prev:hover,
@@ -41,7 +47,7 @@ body.dark .aside .nav li a:hover,
 .aside .nav-toggle span::before,
 .aside .nav-toggle span::after,
 .home .intro .social-links a{
-    background-color: #ffb400;
+    background-color: #ffb400;;
     color: #FFFFFF;
     border: none;
 }
@@ -49,18 +55,18 @@ body.dark .aside .nav li a:hover,
 .header-carousel .owl-nav .owl-next:hover,
 .navbar-nav .nav-item,
 .portfolio .portfolio-filter button.active{
-    border-color: #ffb400;
+    border-color: #ffb400;;
 }
 .footer .btn.btn-social ,
  .text-primary {
-    color:#ffb400;
+    color:#ffb400;;
     background: none;
 
 }
 
 
 .footer .btn.btn-social{
-    border-color: #ffb400;
+    border-color: #ffb400;;
 
 }
 
@@ -68,3 +74,5 @@ body.dark .aside .nav li a:hover,
     color: #FFFFFF;
     background: none;
 }
+
+
